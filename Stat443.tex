@@ -1,0 +1,124 @@
+\documentclass[12pt]{article}
+\usepackage{mylibrary}
+\usepackage{amsmath} % For math symbols
+\pagestyle{fancy}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptername\ \thechapter}{20pt}{\Huge\bfseries}
+% Customize section title format
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+
+
+\begin{document}
+\vspace*{\fill}
+
+\begin{center}
+    \fontsize{25pt}{20pt}\selectfont
+    \thispagestyle{empty}
+    \textbf{Stat443}\\
+    \textbf{}\\
+    \text{Fall 2024}\\
+    \textbf{}\\
+    \textbf{}\\
+\end{center}
+\vspace*{\fill}
+\newpage
+
+{
+    \fontsize{13pt}{18pt}\selectfont
+    \tableofcontents
+    
+}
+\newpage
+\newcommand{\add}[1]{{\color{VioletRed} #1}}
+
+%设置字号
+\fontsize{12pt}{17pt}\selectfont
+
+
+
+\newpage
+\headerstyle{Chapter 1}
+
+\mysection{Introduction to Forcasting and Time Series}{1}
+
+\weekdate{1}{September 4th to 6th}
+
+\begin{definition}
+    Time Series Data.
+    \begin{itemize}
+        \item A time series is a sequence
+    \end{itemize}
+\end{definition}
+
+\weekdate{2}{September 9th to 13 th}
+\textbf{Mathematical Models}
+\begin{itemize}
+    \item The general framework is to remove the trend and seasonal patterns in the data so that we have a stationary process.
+    \item The detrendized and deseasonalize data is then to be modelled.
+    \item Let us formalize trend and seasonal patterns in mathematical forms.
+    \item We will assume $X_t$ denotes the value of process at time t.
+\end{itemize}
+
+\begin{example}
+    Models with (non-periodic) trend\\
+    Consider the model $X_t = m_t + Y_t$ where $m_t$ is a slowly changing function(deterministic) and $Y_t$ is the zero-mean random component.
+    \begin{itemize} 
+        \item Calculate $E(X)$.
+        \begin{align*}
+            E(X) &= E(m_t + Y_t)\\
+            &= E(m_t) + E(Y_t)\\
+            &= E(m_t) \\
+            &= m_t
+        \end{align*}
+        Therefore, the trend is ,in fact , the mean of process.
+    \end{itemize}
+    \item Provide some examples of $X_t$ defined above.
+    $$ X_t = \alpha_0 + \alpha_1 t + \alpha_2 t^2 + Y_t$$
+\end{example}
+
+\weekdate{3}{September 16th to 20 th}
+
+
+\begin{definition}
+    \textbf{Properties and Statistical Inference}
+\end{definition}
+
+\begin{definition}
+    \textbf{Properties of the $\Tilde{\beta}_{OLS}$($(X^TX)^{-1} X^T  y $)}
+    \begin{itemize}
+        \item Suppose $\epsilon \sim MVN(0,\sigma^2I_n) $, i.e. $E(\epsilon) = 0$ and $Var(\epsilon) - \sigma^2 I_n = diag(\sigma^2)$
+        \item $\Tilde{\beta}_{OLS}$ is an unbiased estimator for $\beta$, i.e. $E(\Tilde{\beta}_{OLS}) = \beta$.
+        \item Variance/covariance matrix of $\Tilde{\beta}_{OLS}$ is $$Var(\Tilde{\beta}_{OLS}) = Var((X^TX)^{-1}X^Ty) = ? = \sigma^2(X^TX)^{-1}$$
+        \begin{itemize}
+            \item $\sigma^2$ using x to predict y 
+        \end{itemize}
+        \item Estimate $\sigma^2$ by the following unbiased
+    \end{itemize}
+\end{definition}
+\begin{definition}
+    \textbf{ Maximum likelihood Estimation}
+    \begin{itemize}
+        \item The distribution of \textbf{Y} is $MVN(X\beta,\sum)$ where $\sum = \sigma^2 I_n$. The density function of \textbf{Y} is 
+        \item Log-likelihood is the 
+    \end{itemize}
+\end{definition}
+
+
+\begin{definition}
+    \textbf{Sum of Squares}
+    It is easy to say that
+
+    The balancing between fit and potentially prediction power and we call this bias-variance trade-off \& alicum it later.
+\end{definition}
+
+\begin{example}
+    The market value of a house is of
+interest to a both buyers and sellers(n = 24). It should be a function of a
+number of features of the house and a multiple linear
+regression model can be used to estimate this function. In
+order to calibrate the model, a data set has been constructed
+using the following variables
+\end{example}
+\end{document}
